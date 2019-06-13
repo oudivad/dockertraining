@@ -1,5 +1,6 @@
 # dockertraining
 
+Clone project
 https://github.com/oudivad/dockertraining
 Create Dockerfile
 
