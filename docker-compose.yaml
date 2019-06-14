@@ -26,4 +26,14 @@ services:
             - /sys:/sys:ro
             - /var/lib/docker/:/var/lib/docker:ro
             
-    portainer
+    portainer:
+        image: portainer/portainer
+        restart: always
+        container_name: "portainer-app"
+    #Automatically choose 'Manage the Docker instance where Portainer is running' by adding <--host=unix:///var/run/docker.sock> to the command
+        networks:
+            - local
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - /opt/portainer/data:/data
+            
